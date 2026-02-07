@@ -5,8 +5,8 @@ import dotenv from "dotenv"
 import { connectdb } from "./lib/db.js"
 import cookieParser from "cookie-parser"
 import cors from "cors";
+import { app,server } from "./lib/socket.js"
 
-const app = express();
 dotenv.config();
 
 app.use(express.json({limit:"10mb"}));
@@ -21,7 +21,7 @@ app.use("/api/auth",authroutes)
 app.use("/api/messages",messageroutes)
 
 
-app.listen(5001,()=>{
+server.listen(5001,()=>{
     console.log("server is connected sucessfully on 5001")
     connectdb()
 })

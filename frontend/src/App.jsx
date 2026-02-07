@@ -13,7 +13,8 @@ import Settingspage from "./pages/Settingspage";
 
 
 function App() {
-  const {authUser,isCheckingAuth,checkAuth} = useAuthStore()
+  const {authUser,isCheckingAuth,checkAuth,onlineUsers} = useAuthStore()
+  console.log({onlineUsers})
   useEffect(()=>{checkAuth()},[checkAuth])
   console.log(authUser)
   if(isCheckingAuth && !authUser) return(

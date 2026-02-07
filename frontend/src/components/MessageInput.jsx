@@ -88,7 +88,7 @@ const MessageInput = () => {
             type="file"
             accept="image/*"
             className="hidden"
-            ref={fileInputRef}
+            ref={fileInputRef}  //store dom of inp here like <input>..
             onChange={handleImageChange}
           />
            <button
